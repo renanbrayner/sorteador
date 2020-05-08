@@ -1,4 +1,5 @@
 {
+  "homepage": "http://renanbrayner.github.io/sorteador",
   "name": "sorteador",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
