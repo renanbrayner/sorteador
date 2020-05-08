@@ -1,24 +1,76 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import Buttom from './components/Button'
+import List from './components/Sorter'
+
 function App() {
+  const [list, setList] = useState([]);
+  const [newItem, setNewItem] = useState('');
+
+  // PASSED TO LIST
+  const handleChange = (e) => {
+    setNewItem(e.target.value)
+  }
+
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    setList([...list, newItem])
+  }
+
+  const handleDeleteItem = (index) => {
+    clearClass()
+    const copy = [...list]
+    copy.splice(index, 1)
+    setList(copy)
+  }
+
+  const itens = list.map(function(item, index){
+    return <li key={index} id={index}> {index + 1}. {item}  <span onClick={() => handleDeleteItem(index)}>excluir</span> </li>
+  })
+  
+  const deleteAll = () => {
+    setList([]);
+  }
+//PASSED TO BUTTON
+  const handleDraw = () => {
+    const lenght = list.length
+    if (lenght <= 0) return
+    const result = randomInt(0, lenght)
+    clearClass()
+    addClass(result)
+    console.log('ativei')
+  }
+
+  const randomInt = (min, max) => {
+    return min + Math.floor((max - min) * Math.random());
+  }
+
+  const clearClass = () => {
+    const refreshClasses = document.querySelectorAll('li');
+    [].forEach.call(refreshClasses, function(el) {
+      el.className = '';
+    })
+  }
+
+  const addClass = (result) => {
+    const selected = document.getElementById(`${result}`)
+    selected.className = "selected"
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Buttom
+        handleDraw={handleDraw}
+      />
+      <List 
+        handleChange={handleChange}
+        newItem={newItem}
+        handleAddItem={handleAddItem}
+        itens={itens}
+        deleteAll={deleteAll}
+      />
     </div>
   );
 }
