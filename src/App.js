@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import Buttom from './components/Button'
-import List from './components/Sorter'
+import List from './components/List'
 
 function App() {
   const [list, setList] = useState([]);

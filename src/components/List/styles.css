@@ -1,5 +1,5 @@
 .Sorter {
-  height: 80vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: top;
@@ -126,4 +126,18 @@
 
 .Sorter ol li span:hover {
   text-shadow: 0px 0px 4px #e43f5a;
+}
+
+@media (max-width: 500px) {
+  .Sorter .flex button {
+    min-width: 20px;
+  }
+
+  .Sorter .flex input {
+    min-width: 40px;
+  }
+
+  .Sorter {
+    padding: 0 8px;
+  }
 }

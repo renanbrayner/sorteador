@@ -21,3 +21,9 @@
 .selected span:hover {
   text-shadow: 0px 0px 5px #3fe463 !important;
 }
+
+@media (max-width: 767px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+} 

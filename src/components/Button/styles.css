@@ -33,3 +33,13 @@
 .Button button:active {
   /* background: linear-gradient(246deg, rgba(22,36,71,1) 0%, rgb(21, 56, 146) 100%); */
 }
+
+@media (max-width: 767px) {
+
+  .Button button{
+    width: 200px;
+    height: 200px;
+    font-size: 1.9rem;
+  }
+
+}

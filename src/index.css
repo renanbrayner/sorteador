@@ -14,6 +14,7 @@ body {
 
   background: rgb(22,36,71);
   background: linear-gradient(66deg, rgba(22,36,71,1) 0%, rgb(21, 56, 146) 100%);
+  background-repeat: no-repeat;
 
   /* height: 100vh; */
   width: 100%a;
